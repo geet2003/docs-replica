@@ -75,6 +75,25 @@ export default function RichEditor({ content, onChange, editable = true }: Props
 
   return (
     <div className="flex flex-col h-full">
+      <style>{`
+        .docs-editor, .docs-editor .tiptap {
+          color: #111827 !important;
+          font-size: 1rem;
+          line-height: 1.75;
+        }
+        .docs-editor .tiptap:focus { outline: none; }
+        .docs-editor .tiptap p { margin: 0.4em 0; color: #111827 !important; }
+        .docs-editor .tiptap h1 { font-size: 2em !important; font-weight: 700 !important; color: #111827 !important; margin: 0.75em 0 0.25em; line-height: 1.2; }
+        .docs-editor .tiptap h2 { font-size: 1.5em !important; font-weight: 600 !important; color: #111827 !important; margin: 0.75em 0 0.25em; line-height: 1.3; }
+        .docs-editor .tiptap h3 { font-size: 1.25em !important; font-weight: 600 !important; color: #111827 !important; margin: 0.75em 0 0.25em; line-height: 1.4; }
+        .docs-editor .tiptap strong { font-weight: 700 !important; }
+        .docs-editor .tiptap em { font-style: italic !important; }
+        .docs-editor .tiptap u { text-decoration: underline !important; }
+        .docs-editor .tiptap ul { list-style-type: disc !important; padding-left: 1.5em !important; margin: 0.5em 0; }
+        .docs-editor .tiptap ol { list-style-type: decimal !important; padding-left: 1.5em !important; margin: 0.5em 0; }
+        .docs-editor .tiptap li { display: list-item !important; margin: 0.2em 0; color: #111827 !important; }
+        .docs-editor .tiptap li > p { margin: 0; }
+      `}</style>
       {editable && (
         <div className="flex items-center gap-1 px-3 py-2 border-b border-gray-200 flex-wrap">
           <ToolbarBtn
